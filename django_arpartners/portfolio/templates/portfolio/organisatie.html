@@ -1,0 +1,35 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    {% for site_content in site_content %}
+        - {{ site_content.organisatie_header }}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+<div class="container container--narrow">
+    <div class="section section--content">
+        {% for site_content in site_content %}
+        <h2 class="heading heading--pages">{{site_content.organisatie_header}}</h2>
+
+        <p class="paragraph paragraph--italic">
+            {{site_content.organisatie_header_text|linebreaksbr }}
+        </p>
+
+        <p class="paragraph">
+            {{site_content.organisatie_content_text|linebreaksbr }}
+        </p>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="section section--content-wide">
+        <div class="wide-image wide-image__bg3">
+            <div class="wide-image-border-top"></div>
+            <div class="wide-image-border-bottom"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

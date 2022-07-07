@@ -1,0 +1,33 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="index-background"></div>
+<div class="container container--narrow">
+    <div class="section section--content index-content--logo">
+        <div class="logo-container">
+            <h1><img class="index-logo animated fadeInDownBig" src="{% static 'svg/arp_logo_white.svg' %}" alt="Amsterdam Realty Partners"/></h1>
+        </div>
+    </div>
+    <div class="section section--content index-content--text">
+        {% for site_content in site_content %}
+        <h2 class="heading heading--index">Organisatie</h2>
+        <p class="paragraph paragraph--italic">{{ site_content.home_organisatie }}
+            <br/>
+            <a class="hyperlink hyperlink--index" href="/organisatie">Klik hier voor meer informatie</a></p>
+        <h2 class="heading heading--index">Directie</h2>
+        <p class="paragraph paragraph--italic">{{ site_content.home_directie }}
+            <br/>
+            <a class="hyperlink hyperlink--index" href="/organisatie">Klik hier voor meer informatie</a></p>
+        <h2 class="heading heading--index">Projecten</h2>
+        <p class="paragraph paragraph--italic">{{ site_content.home_projecten }}
+            <br/>
+            <a class="hyperlink hyperlink--index" href="/organisatie">Klik hier voor een overzicht van al onze projecten</a></p>
+        <h2 class="heading heading--index">Investeren</h2>
+        <p class="paragraph paragraph--italic">{{ site_content.home_investeren }}
+            <br/>
+            <a class="hyperlink hyperlink--index" href="/organisatie">Klik hier voor meer informatie</a></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

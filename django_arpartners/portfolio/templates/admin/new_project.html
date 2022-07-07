@@ -1,0 +1,174 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>ARPartners - New Project</title>
+    <meta name="description" content="ARPartners - New Project">
+    <meta name="author" content="Kaboom">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+          crossorigin="anonymous">
+    <style>
+        .formTitle {
+            padding: 50px 20px 5px 0;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #b8daff;
+        }
+
+        .formGroupTitle {
+            padding: 50px 20px 5px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid #b8daff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-3 mb-5">
+    <h1 class="formTitle">ARPartners > Add a new project</h1>
+    <form>
+        <!--PROJECT INFO-->
+        <!--PROJECT INFO-->
+        <!--PROJECT INFO-->
+        <h2 class="formGroupTitle">Project info</h2>
+        <div class="form-group">
+            <label for="projectName">Name</label>
+            <input type="text" class="form-control" id="projectName" aria-describedby="projectNameHelp"
+                   placeholder="Enter project name, for example: Nieuwe Noord Haarlem" required>
+            <small id="projectNameHelp" class="form-text text-muted">This name will be displayed in the page title
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="projectURL">URL</label>
+            <input type="text" class="form-control" id="projectURL" aria-describedby="projectUrlHelp"
+                   placeholder="Enter the project url, for example: nieuw-noord-haarlem" required>
+            <small id="projectUrlHelp" class="form-text text-muted">Only use: lowercase characters, underscores and
+                dashes
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="projectDescription">Description</label>
+            <textarea class="form-control" id="projectDescription" rows="6"
+                      aria-describedby="projectDescriptionHelp" required></textarea>
+            <small id="projectDescriptionHelp" class="form-text text-muted">Describe the project</small>
+        </div>
+        <div class="form-group">
+            <label for="projectThumbnail">Project thumbnail</label>
+            <input type="file" class="form-control-file" id="projectThumbnail" aria-describedby="thumbnailHelp"
+                   required>
+            <small id="thumbnailHelp" class="form-text text-muted">Choose an image for the project overview page
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="projectStatus">Project status</label>
+            <select class="form-control" id="projectStatus" required>
+                <option>Gerealiseerd</option>
+                <option>In ontwikkeling</option>
+                <option>In verkoop/verhuur</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6">
+                    <label for="orderId">Order ID</label>
+                    <input class="form-control" type="number" value="1" id="orderId" aria-describedby="orderIdHelp"
+                           required>
+                    <small id="orderIdHelp" class="form-text text-muted">Lower numbers mean newer projects</small>
+                </div>
+                <div class="col-6">
+                    <label for="createdDate">Created date</label>
+                    <input class="form-control" type="date" value="2011-08-19" id="createdDate" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" aria-describedby="publishedHelp">
+                Published
+            </label>
+            <small id="publishedHelp" class="form-text text-muted">Check to display the project on the website</small>
+        </div>
+
+        <!--PROJECT ADDRESS-->
+        <!--PROJECT ADDRESS-->
+        <!--PROJECT ADDRESS-->
+        <h2 class="formGroupTitle">Project address</h2>
+        <div class="form-group">
+            <label for="projectStreetName">Street name</label>
+            <input type="text" class="form-control" id="projectStreetName">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6">
+                    <label for="projectZipcode">Zipcode</label>
+                    <input type="text" class="form-control" id="projectZipcode">
+                </div>
+                <div class="col-6">
+                    <label for="projectHouseNumber">House number</label>
+                    <input type="text" class="form-control" id="projectHouseNumber">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="projectDistrict">District</label>
+            <input type="text" class="form-control" id="projectDistrict">
+        </div>
+        <div class="form-group">
+            <label for="projectCity">City</label>
+            <input type="text" class="form-control" id="projectCity">
+        </div>
+        <div class="form-group">
+            <label for="projectNeighborhood">Neighborhood</label>
+            <input type="text" class="form-control" id="projectNeighborhood">
+        </div>
+
+        <!--OBJECT DETAILS-->
+        <!--OBJECT DETAILS-->
+        <!--OBJECT DETAILS-->
+        <h2 class="formGroupTitle">Object Details</h2>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6">
+                    <label for="residentialHouses">Residential houses</label>
+                    <input class="form-control" type="number" id="residentialHouses">
+                </div>
+                <div class="col-6">
+                    <label for="nonResidential">Non residential</label>
+                    <input class="form-control" type="number" id="nonResidential">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6">
+                    <label for="parkingSpots">Parking spots</label>
+                    <input class="form-control" type="number" id="parkingSpots">
+                </div>
+                <div class="col-6">
+                    <label for="totalFloorArea">Total floor area</label>
+                    <input class="form-control" type="number" id="totalFloorArea">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="realEstateBroker">Real estate broker</label>
+            <input type="text" class="form-control" id="realEstateBroker">
+        </div>
+
+
+        <!--PROJECT SUBMIT-->
+        <!--PROJECT SUBMIT-->
+        <!--PROJECT SUBMIT-->
+        <button type="submit" class="btn btn-primary">Add project</button>
+    </form>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>

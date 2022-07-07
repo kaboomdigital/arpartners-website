@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>ARPartners - New Project</title>
+    <meta name="description" content="ARPartners - New Project">
+    <meta name="author" content="Kaboom">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+          crossorigin="anonymous">
+    <style>
+        .formTitle {
+            padding: 50px 20px 5px 0;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #b8daff;
+        }
+
+        .formGroupTitle {
+            padding: 50px 20px 5px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid #b8daff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-3 mb-5">
+    <h1 class="formTitle">ARPartners > Add a new project</h1>
+    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>

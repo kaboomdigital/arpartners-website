@@ -1,0 +1,46 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}
+    {% for site_content in site_content %}
+        - {{ site_content.projecten_header }}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+<div class="container container--narrow">
+    <div class="section section--content">
+        {% for site_content in site_content %}
+        <h1 class="heading heading--pages">{{site_content.projecten_header}}</h1>
+        <div class="paragraph paragraph--italic">{{site_content.projecten_header_text}}</div>
+        {% endfor %}
+
+        <div class="project-display-toggle">
+            <a id="status-alle" class="project-display-toggle__link" href="#">Alle</a>&nbsp;|&nbsp;
+            <a id="status-gerealiseerd" class="project-display-toggle__link" href="#">Gerealiseerd</a>&nbsp;|&nbsp;
+            <a id="status-in-ontwikkeling" class="project-display-toggle__link" href="#">In Ontwikkeling</a>&nbsp;|&nbsp;
+            <a id="status-in-verkoop-verhuur" class="project-display-toggle__link" href="#">In Verkoop/Verhuur</a>
+        </div>
+
+        <div class="project-wrapper clearfix">
+            {% for project in projects %}
+            <a class="project jsq__{{ project.project_status }}" href="{% url 'projecten_details' project_url=project.url %}">
+                <img class="project__image" src="{{ project.thumbnail.url }}"/>
+                <h2 class="heading--paragraph-projecten">{{ project.name }}</h2>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.project-display-toggle__link').click(function () {
+        if (this.id == 'status-alle') {
+            $('.project').fadeIn(450);
+        } else {
+            var $el = $('.jsq__' + this.id).fadeIn(450);
+            $('.project').not($el).hide();
+        }
+    })
+</script>
+
+{% endblock %}

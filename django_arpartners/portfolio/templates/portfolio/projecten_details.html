@@ -1,0 +1,144 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    {% for site_content in site_content %}
+        {% for project in projects %}
+            - {{ site_content.projecten_header }} - {{ project.name}}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+{% for project in projects %}
+<div class="container container--narrow">
+    <div class="section section--content">
+        <h1 class="heading heading--pages">
+            {{ project.name}}<br/>
+            <p class="project-status">{{ project.project_status }}</p>
+        </h1>
+
+        <div class="project-nav clearfix">
+            <a class="project-nav__link project-nav__link--previous" href="{{ prev.url }}">
+                <img class="project-nav__link-icon project-nav__link-icon--previous"
+                     src="{% static 'icons/nav/back.svg' %}"/>
+            </a>
+            <a class="project-nav__link project-nav__link--next" href="{{ next.url }}">
+                <img class="project-nav__link-icon project-nav__link-icon--next"
+                     src="{% static 'icons/nav/next.svg' %}"/>
+            </a>
+
+        </div>
+        <div class="project-details">
+
+            <div class="project-details__description-wrapper">
+                <div class="project-details__description-item">
+                    <p class="paragraph paragraph--italic">{{ project.description|linebreaksbr }}</p>
+                </div>
+                <div class="project-details__description-item">
+                    <div class="project-details__description-location">
+                        <p class="paragraph project-details__description-location-text">
+                            {{ project.street_name}} {{ project.house_number}}<br/>
+                            {{ project.zipcode}} {{ project.city}}<br/>
+                            <br/>
+                            <img class="project-details__link-icon" src="{% static 'icons/location.svg' %}"/>
+                            <a target="_blank" class="project-details__link" href="https://www.google.nl/maps/place/{{ project.street_name}}+{{ project.house_number}}+{{ project.zipcode}}+{{ project.city}}">Bekijk op Google Maps</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+                <div class="project-details__table">
+                    <table class="table text">
+                        <tr class="table__header">
+                            <th>Het object</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Locatie</td>
+                            <td>{{ project.city}}</td>
+                        </tr>
+                        <tr>
+                            <td>Stadsdeel</td>
+                            <td>{{ project.district}}</td>
+                        </tr>
+                        <tr>
+                            <td>Buurt</td>
+                            <td>{{ project.neighborhood}}</td>
+                        </tr>
+                        <tr>
+                            <td>Aantal woningen</td>
+                            <td>{{ project.residential_houses|default_if_none:"Geen" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Aantal bedrijfsruimte</td>
+                            <td>{{ project.non_residential|default_if_none:"Geen" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Parkeerplekken</td>
+                            <td>{{ project.parking_spots|default_if_none:"Geen" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Totaal oppervlak</td>
+                            <td>{{ project.total_floor_area}}</td>
+                        </tr>
+                        <tr>
+                            <td>Makelaar</td>
+                            <td>{{ project.real_estate_broker}}</td>
+                        </tr>
+                    </table>
+                    <table class="table text">
+                        <tr class="table__header">
+                            <th>Per eenheid</th>
+                            <th>&equiv;</th>
+                            <th>m&sup2;</th>
+                        </tr>
+                        {% for detail in project_details %}
+                        <tr>
+                            <td>{{ detail.table_row_label }}</td>
+                            <td>{{ detail.table_row_floor }}</td>
+                            <td>{{ detail.table_row_area }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            <div class="project-details__image-wrapper">
+                <resize-observer @notify="handleResize" />
+                <div id="vue-carousel"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    Vue.component('resize-observer', VueResize.ResizeObserver);
+    console.log(handleResize());
+</script>
+
+<script>
+    var images = [
+        {% for image in project_images %}
+        '{{image.image.url}}',
+        {%endfor %}
+    ];
+    var slideTpl = '';
+
+    images.forEach(function (img) {
+        slideTpl += '<slide>' +
+                '<div class="VueCarousel-div">' +
+                '<img class="VueCarousel-image" src="' + img + '"/>' +
+                '<a class="VueCarousel-link" href="' + img + '">Volledig formaat</a>' +
+                '</div>' +
+            '</slide>';
+    });
+
+    new Vue({
+        el: '#vue-carousel',
+        components: {
+            'carousel': VueCarousel.Carousel,
+            'slide': VueCarousel.Slide
+        },
+        template: '<carousel :navigationEnabled="true" paginationColor="#dadada" paginationActiveColor="#1d3661" :perPage="1"  :perPageCustom="[[480, 1], [768, 1]]">' + slideTpl + '</carousel>'
+    });
+</script>
+{% endfor %}
+{% endblock %}

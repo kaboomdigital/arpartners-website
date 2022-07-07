@@ -130,6 +130,7 @@ $RECYCLE.BIN/
 .idea/
 venv_arpartners/
 node_modules/
+node_modules
 *.ai
 db.sqlite3
 __pycache__
