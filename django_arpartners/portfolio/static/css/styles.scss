@@ -1,0 +1,44 @@
+@import "normalize.css";
+
+//@import "webpack/icons-font";
+
+// Settings
+@import "scss/settings/media-queries";
+@import "scss/settings/globals";
+@import "scss/settings/typography";
+
+// Mixins
+//@import "mixins/vertical-center-dib";
+//@import "mixins/clearfix";
+
+// Defaults
+//@import "defaults/button";
+
+// Layout
+@import "scss/layout/base";
+@import "scss/layout/nav";
+@import "scss/layout/index";
+@import "scss/layout/directie";
+@import "scss/layout/projecten";
+@import "scss/layout/projecten_details";
+@import "scss/layout/partners";
+@import "scss/layout/contact";
+@import "scss/layout/footer";
+
+// Sections
+//@import "sections/section";
+//@import "sections/header";
+//@import "sections/about";
+//@import "sections/team_desktop";
+//@import "sections/team_mobile";
+//@import "sections/clients";
+//@import "sections/contact";
+//@import "sections/footer";
+
+// Components
+//@import "scss/components/base";
+//@import "scss/components/nav_menu";
+//@import "components/client-logo";
+//@import "components/case-intro";
+//@import "components/case-video";
+//@import "components/team_member";

@@ -1,0 +1,39 @@
+.partner-list-wrapper {
+    border-left: 1px solid $lightgrey;
+    padding: 0 20px;
+}
+
+.partner-list {
+    text-align: left;
+
+    a {
+        color: $blue;
+        font-size: 1.1em;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.partner-link {
+    display: block;
+}
+
+@media #{$tablet} {
+
+    .partner-list-wrapper {
+        border-right: 1px solid $lightgrey;
+    }
+
+    .partner-list {
+        text-align: left;
+        width: 50%;
+        float: left;
+
+        &--right {
+            text-align: right;
+        }
+    }
+}

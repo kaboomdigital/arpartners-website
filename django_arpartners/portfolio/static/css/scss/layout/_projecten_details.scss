@@ -1,0 +1,211 @@
+.project-status {
+    text-align: center;
+    font-size: 0.5em;
+}
+
+.project-nav {
+
+    margin-bottom: 20px;
+
+    &__link {
+        display: block;
+        width: 0;
+        background-color: $lightgrey;
+        color: $blue;
+        padding: 5px 20px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: bold;
+        //border: 1px solid $lightgrey;
+        border-radius: 25px;
+
+        &:hover {
+            //border: 1px solid $coolgreydark;
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.15);
+        }
+
+        &--previous {
+            float: left;
+
+        }
+
+        &--next {
+            float: right;
+        }
+    }
+
+    &__link-icon {
+        position: relative;
+        top: 5px;
+
+        &--previous {
+            left: -12px;
+        }
+
+        &--next {
+            left: -9px;
+        }
+    }
+}
+
+.project-details {
+
+    &__description-wrapper {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__description-item {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    &__description-location {
+        display: block;
+        padding: 20px;
+        background-image: url("/static/images/map_01.jpg");
+        background-position: 30% 75%;
+        border-radius: 10px;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    }
+
+    &__description-location-text {
+        margin: 0;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $blue;
+        margin-left: 10px;
+    }
+
+    &__link-icon {
+        position: relative;
+        top: 3px;
+    }
+
+    &__table {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        color: $blue;
+    }
+
+    &__image-wrapper {
+        max-height: 600px;
+        //background-color: black;
+    }
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 1px solid $lightgrey;
+
+        &:last-child {
+            border-bottom: 3px solid $lightgrey;
+        }
+    }
+
+    th {
+        padding: 5px;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    &__header {
+        text-align: left;
+    }
+}
+
+.VueCarousel-slide {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.VueCarousel-div {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.VueCarousel-image {
+    position: relative;
+    max-width: 100%;
+    max-height: 600px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.VueCarousel-link {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+    color: $coolgreylight;
+    font-size: 0.9em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+@media #{$tablet} {
+
+    .project-details {
+
+        &__description-wrapper {
+            display: inline-flex;
+            width: calc(100% + 40px);
+            margin-left: -20px;
+        }
+
+        &__description-item {
+            display: flex;
+            width: 50%;
+            padding: 0 20px;
+        }
+
+        &__description-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        &__table {
+            display: inline-flex;
+            width: calc(100% + 40px);
+            margin-left: -20px;
+        }
+    }
+
+    .table {
+        display: flex;
+        padding: 0 20px;
+        border-collapse: collapse;
+
+        tr {
+
+            &:last-child {
+                border-bottom: 1px solid $lightgrey;
+            }
+        }
+
+        td {
+            width: 280px;
+        }
+
+        &__header {
+            text-align: left;
+        }
+    }
+}

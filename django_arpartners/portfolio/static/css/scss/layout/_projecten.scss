@@ -1,0 +1,59 @@
+.project-display-toggle {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: right;
+    text-transform: uppercase;
+
+    a {
+        text-decoration: none;
+        color: $blue;
+    }
+
+    &__link {
+        margin-right: 10px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+
+.project-wrapper {
+    a {
+        text-decoration: none;
+        color: $darkgrey;
+    }
+}
+
+.project {
+    display: block;
+    width: 100%;
+    padding: 10px 0 10px 0;
+
+    &__image {
+        width: 100%;
+        box-shadow: 0 0 1px #cecece;
+    }
+}
+
+@media #{$small-tablet} {
+    .project-wrapper {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+    }
+
+    .project {
+        box-sizing: border-box;
+        width: 50%;
+        float: left;
+        padding: 10px;
+    }
+}
+
+@media #{$tablet} {
+
+    .project {
+        width: 33.3%;
+    }
+}

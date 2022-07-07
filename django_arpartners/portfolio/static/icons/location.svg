@@ -1,0 +1,5 @@
+<svg id="Location" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 10 15">
+	<defs><style>.cls-1{fill:#1d3661;}</style></defs>
+	<title>location</title>
+	<path class="cls-1" d="M15,8A5,5,0,0,0,5,8c0,4.77,5,10,5,10S15,12.77,15,8Zm-7.7.06a2.7,2.7,0,1,1,2.7,2.7A2.7,2.7,0,0,1,7.3,8.06Z" transform="translate(-5 -3)"/>
+</svg>

@@ -1,0 +1,73 @@
+/*** Colors */
+$black: #000;
+$grey: #979797;
+$darkgrey: #3b3b3b;
+$lightgrey: #f0f0f0;
+$white: #fff;
+$footergrey: #3D4045;
+$footerlightgrey: #999999;
+
+$blue: #1d3661;
+
+$coolgreydark: #a9a8a9;
+$coolgreylight: #dadada;
+
+/*** Widths */
+$page-width: 990px;
+
+/*** Clearfix mixin */
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: ' ';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+/*** Wide images styling */
+.wide-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center center;
+    margin: 50px 0;
+    //filter: grayscale(41%) hue-rotate(-186deg);
+
+    &__bg1 {
+        background-image: url("/static/images/accent_image_med_01.jpg");
+    }
+
+    &__bg2 {
+        background-image: url("/static/images/accent_image_med_02.jpg");
+    }
+
+    &__bg3 {
+        background-image: url("/static/images/accent_image_med_06.jpg");
+    }
+
+    &__bg4 {
+        background-image: url("/static/images/accent_image_med_05.jpg");
+    }
+
+    &__bg_map {
+        background-image: url("/static/images/map_02.jpg");
+        background-position: 60% center;
+    }
+}
+
+.wide-image-border {
+    height: 50px;
+    background-color: rgba(255,255,255, 0.6);
+}
+
+.wide-image-border-top {
+    height: 50px;
+    background-color: rgba(255,255,255, 0.6);
+}

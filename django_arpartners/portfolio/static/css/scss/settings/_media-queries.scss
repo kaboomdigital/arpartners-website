@@ -1,0 +1,34 @@
+/**
+ * Media queries
+ */
+
+// Breakpoints
+$breakpoint-small-tablet: 600px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1200px;
+$breakpoint-large-screen: 1441px;
+
+$breakpoint-mid-height-screen: 520px;
+$breakpoint-tall-screen: 800px;
+
+$mobile:           "only screen and (max-width: " + $breakpoint-small-tablet + ")";
+$mobile-portrait:  "only screen and (max-device-width: " + $breakpoint-small-tablet + ") and (orientation: portrait)";
+$mobile-landscape: "only screen and (max-device-width: " + $breakpoint-small-tablet + ") and (orientation: landscape)";
+
+$small-tablet:           "only screen and (min-width: " + $breakpoint-small-tablet + ")";
+$small-tablet-portrait:  "only screen and (min-device-height: " + $breakpoint-small-tablet + ") and (orientation: portrait)";
+$small-tablet-landscape: "only screen and (min-device-width: " + $breakpoint-small-tablet + ") and (orientation: landscape)";
+
+$tablet:           "only screen and (min-width: " + $breakpoint-tablet + ")";
+$tablet-portrait:  "only screen and (min-device-width: " + $breakpoint-tablet + ") and (orientation: portrait)";
+$tablet-landscape: "only screen and (min-device-width: " + $breakpoint-tablet + ") and (orientation: landscape)";
+
+$laptop:           "only screen and (min-width: " + $breakpoint-laptop + ")";
+$desktop:          "only screen and (min-width: " + $breakpoint-desktop + ")";
+$large-screen:     "only screen and (min-width: " + $breakpoint-large-screen + ")";
+
+$short-screen:      "only screen and (max-height: " + $breakpoint-mid-height-screen + ")";
+$mid-height-screen: "only screen and (max-height: " + $breakpoint-tall-screen + ")";
+
+$retina-display:    "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";
