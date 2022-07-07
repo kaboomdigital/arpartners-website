@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath django_arpartners django_arpartners.wsgi
